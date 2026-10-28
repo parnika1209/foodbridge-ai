@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoodBridge AI | Surplus Food Sharing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="brand">🍲 FoodBridge <span>AI</span></div>
+    <p>Share surplus food. Support your community.</p>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">FOOD RESCUE NETWORK</p>
+        <h1>Good food deserves<br>another destination.</h1>
+        <p>Connect food donors with community organisations and help reduce avoidable food waste.</p>
+      </div>
+      <div class="hero-stat"><strong id="foodCount">3</strong><span>active food listings</span></div>
+    </section>
+
+    <section class="metrics">
+      <div><strong id="mealsCount">120</strong><span>meal portions listed</span></div>
+      <div><strong id="requestsCount">1</strong><span>requests received</span></div>
+      <div><strong>2</strong><span>community partners</span></div>
+    </section>
+
+    <section class="panel">
+      <h2>List surplus food</h2>
+      <p class="muted">For this demo, use sample information. Real donations must follow local food-safety requirements.</p>
+      <form id="foodForm">
+        <label>Donor / organisation
+          <input id="donor" required maxlength="60" placeholder="e.g. Green Leaf Cafe">
+        </label>
+        <div class="two">
+          <label>Food item
+            <input id="food" required maxlength="60" placeholder="e.g. Vegetable rice">
+          </label>
+          <label>Meal portions
+            <input id="quantity" required type="number" min="1" max="10000" placeholder="e.g. 25">
+          </label>
+        </div>
+        <div class="two">
+          <label>Pickup area
+            <input id="location" required maxlength="80" placeholder="e.g. Tambaram, Chennai">
+          </label>
+          <label>Collect by
+            <input id="deadline" required type="datetime-local">
+          </label>
+        </div>
+        <button type="submit">＋ Add food listing</button>
+        <p id="formMessage" role="status"></p>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div><h2>Available food</h2><p class="muted">Demo listings from local donors</p></div>
+        <select id="filter">
+          <option value="all">All listings</option>
+          <option value="available">Available</option>
+          <option value="requested">Requested</option>
+        </select>
+      </div>
+      <div id="listings" class="listings"></div>
+    </section>
+
+    <section class="notice">
+      <strong>Food safety first</strong>
+      <p>This prototype is for demonstration only. It does not verify food quality, storage temperature, or legal eligibility. Only list food that can be safely handled and transported, and coordinate with verified recipient organisations.</p>
+    </section>
+  </main>
+  <footer>FoodBridge AI · Social innovation prototype · SDG 2 & SDG 12</footer>
+  <script src="script.js"></script>
+</body>
+</html>
